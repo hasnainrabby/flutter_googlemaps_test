@@ -9,7 +9,7 @@ class showMap extends StatefulWidget {
 
 class _showMapState extends State<showMap> {
   late GoogleMapController mapController;
-  final LatLng _center = LatLng(23.7104, 90.4074);
+  static LatLng _center = const LatLng(23.7104, 90.4074);
 
   void _onMapCreated(GoogleMapController controller){
     mapController = controller;
@@ -21,8 +21,15 @@ class _showMapState extends State<showMap> {
         title: Text("Flutter Map"),
       ),
       body: GoogleMap(
+        markers: {dhakaMarker},
+        mapType: MapType.terrain,
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(target: _center,zoom: 14.0),),
     );
   }
+  Marker dhakaMarker = Marker(markerId: MarkerId("Dhaka"),
+    position: _center,
+    infoWindow: InfoWindow(title: "Dhaka",snippet: "This is the capital of BD"),
+    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+  );
 }
