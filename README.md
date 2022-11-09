@@ -1,10 +1,16 @@
 # flutter_googlemaps_test
 
-A new Flutter project.
+A new Flutter project. This is a project about Google Map.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Google Map application using Flutter. 
+- Create mapController object wich is GoogleMapController type.
+- Use GoogleMap widget.
+     -initial Camera position
+     -Map type
+     -onMapCreated
+     -marker
 
 A few resources to get you started if this is your first Flutter project:
 
